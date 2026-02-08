@@ -4,8 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="noindex, nofollow">
-    <title>Unbuilt Apps - Coming Soon</title>
+    <title>Unbuilt Apps | Filling the Gaps</title>
     <style>
+        :root {
+            --apple-black: #1d1d1f;
+            --apple-grey: #86868b;
+            --apple-bg: #ffffff;
+            --apple-border: #e5e5e5;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -13,145 +20,173 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
+            background-color: var(--apple-bg);
+            color: var(--apple-black);
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            color: white;
-            padding: 20px;
+            justify-content: space-between;
+            min-height: 100vh;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
 
-        .container {
+        main {
             text-align: center;
-            max-width: 600px;
-            animation: fadeIn 1s ease-in;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .logo {
-            font-size: 4rem;
-            margin-bottom: 1.5rem;
-            animation: pulse 2s ease-in-out infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-        }
-
-        h1 {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            font-weight: 700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            max-width: 800px;
+            padding: 40px 20px;
+            margin: auto 0;
         }
 
         .tagline {
-            font-size: 1.4rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-            font-weight: 300;
-            line-height: 1.6;
-        }
-
-        .status-badge {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            padding: 12px 30px;
-            border-radius: 50px;
-            font-size: 1rem;
+            font-size: 13px;
             font-weight: 600;
-            margin-top: 2rem;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-        }
-
-        .apps-preview {
-            margin-top: 3rem;
-            padding-top: 3rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .apps-preview h2 {
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            margin-bottom: 60px;
+            color: var(--apple-black);
             opacity: 0.9;
+        }
+
+        .hero-image {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            margin: 0 auto 80px auto;
+            display: block;
+            filter: grayscale(100%);
+            opacity: 0.85;
+        }
+
+        .manifesto {
+            font-size: 32px;
+            line-height: 1.35;
+            font-weight: 600;
+            letter-spacing: -0.015em;
+            color: var(--apple-black);
+            margin-bottom: 16px;
+        }
+
+        .manifesto-sub {
+            font-size: 24px;
+            line-height: 1.4;
             font-weight: 400;
+            letter-spacing: -0.01em;
+            color: var(--apple-grey);
+            margin-top: 20px;
         }
 
-        .app-list {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            justify-content: center;
-        }
-
-        .app-item {
-            background: rgba(255, 255, 255, 0.15);
-            backdrop-filter: blur(10px);
-            padding: 15px 25px;
-            border-radius: 25px;
-            font-size: 1rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .app-item:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
-            background: rgba(255, 255, 255, 0.25);
+        footer {
+            padding: 60px 20px 40px 20px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--apple-grey);
+            width: 100%;
+            border-top: 1px solid var(--apple-border);
         }
 
         .contact {
-            margin-top: 3rem;
-            opacity: 0.8;
+            margin-bottom: 24px;
+            font-size: 14px;
         }
 
         .contact a {
-            color: white;
+            color: var(--apple-black);
             text-decoration: none;
-            border-bottom: 2px solid rgba(255, 255, 255, 0.4);
-            padding-bottom: 2px;
-            transition: border-color 0.3s;
+            font-weight: 500;
+            transition: opacity 0.2s ease;
         }
 
         .contact a:hover {
-            border-color: white;
+            opacity: 0.7;
         }
 
-        @media (max-width: 600px) {
-            h1 { font-size: 2.2rem; }
-            .logo { font-size: 3rem; }
-            .tagline { font-size: 1.1rem; }
-            .app-list { flex-direction: column; }
+        .legal {
+            margin-top: 16px;
+            font-size: 11px;
+        }
+
+        .legal a {
+            color: var(--apple-grey);
+            text-decoration: none;
+            margin: 0 12px;
+            transition: color 0.2s ease;
+        }
+
+        .legal a:hover {
+            color: var(--apple-black);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .tagline {
+                font-size: 12px;
+                margin-bottom: 40px;
+            }
+
+            .hero-image {
+                max-width: 100%;
+                margin-bottom: 60px;
+            }
+
+            .manifesto {
+                font-size: 24px;
+            }
+
+            .manifesto-sub {
+                font-size: 19px;
+            }
+
+            main {
+                padding: 30px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .tagline {
+                font-size: 11px;
+            }
+
+            .manifesto {
+                font-size: 21px;
+            }
+
+            .manifesto-sub {
+                font-size: 17px;
+            }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="logo">🚀</div>
-        <h1>Unbuilt Apps</h1>
-        <p class="tagline">Building innovative solutions for real-world problems.<br>Watch this space.</p>
+
+    <main>
+        <div class="tagline">Filling the gaps. Doing the right thing.</div>
         
-        <div class="status-badge">✨ Under Development</div>
+        <img src="hero-image.png" alt="The missing piece" class="hero-image">
 
-        <div class="apps-preview">
-            <h2>Coming Soon</h2>
-            <div class="app-list">
-                <div class="app-item">🔧 KnowMyParts</div>
-                <div class="app-item">📊 More Apps</div>
-            </div>
-        </div>
+        <h1 class="manifesto">
+            We build the essential tools<br>that haven't been built yet.
+        </h1>
+        
+        <p class="manifesto-sub">
+            Technology should solve the problems we've learned to ignore.
+        </p>
+    </main>
 
+    <footer>
         <div class="contact">
-            <p>Questions? Reach out: <a href="mailto:contact@unbuiltapps.com">contact@unbuiltapps.com</a></p>
+            <a href="mailto:contact@unbuiltapps.com">contact@unbuiltapps.com</a>
         </div>
-    </div>
+        
+        <div class="legal">
+            &copy; 2026 Unbuilt Apps ·
+            <a href="/apps">Explore Unbuilt Apps</a> ·
+            <a href="/privacy">Privacy Policy</a> ·
+            <a href="/terms">Terms & Conditions</a>
+        </div>
+    </footer>
+
 </body>
 </html>
