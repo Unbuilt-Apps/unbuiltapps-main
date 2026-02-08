@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explore Unbuilt Apps</title>
+    <style>
+        :root {
+            --apple-black: #1d1d1f;
+            --apple-grey: #86868b;
+            --apple-bg: #ffffff;
+            --apple-border: #e5e5e5;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: var(--apple-bg);
+            color: var(--apple-black);
+            font-family: -apple-system, BlinkMacSystemFont, "SF Pro Display", "SF Pro Text", "Helvetica Neue", Helvetica, Arial, sans-serif;
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 20px 60px 20px;
+        }
+
+        .back-link {
+            font-size: 14px;
+            margin-bottom: 60px;
+        }
+
+        .back-link a {
+            color: var(--apple-grey);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .back-link a:hover {
+            color: var(--apple-black);
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            letter-spacing: -0.03em;
+            margin-bottom: 12px;
+        }
+
+        .subtitle {
+            font-size: 21px;
+            color: var(--apple-grey);
+            margin-bottom: 60px;
+        }
+
+        .app-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1px;
+            background: var(--apple-border);
+            border: 1px solid var(--apple-border);
+        }
+
+        .app-card {
+            background: var(--apple-bg);
+            padding: 32px 24px;
+            transition: background-color 0.2s;
+        }
+
+        .app-card:hover {
+            background: #fafafa;
+        }
+
+        .app-card a {
+            text-decoration: none;
+            color: var(--apple-black);
+            display: block;
+        }
+
+        .app-icon {
+            font-size: 32px;
+            margin-bottom: 16px;
+        }
+
+        .app-card h2 {
+            font-size: 21px;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            margin-bottom: 8px;
+        }
+
+        .app-card p {
+            font-size: 15px;
+            color: var(--apple-grey);
+            line-height: 1.5;
+        }
+
+        .coming-soon {
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        footer {
+            text-align: center;
+            padding: 60px 20px 40px 20px;
+            font-size: 12px;
+            color: var(--apple-grey);
+            border-top: 1px solid var(--apple-border);
+            margin-top: 80px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 36px;
+            }
+
+            .subtitle {
+                font-size: 19px;
+            }
+
+            .container {
+                padding: 60px 20px 40px 20px;
+            }
+
+            .app-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="back-link">
+            <a href="/">← Back to Home</a>
+        </div>
+
+        <h1>Explore Unbuilt Apps</h1>
+        <p class="subtitle">Simple tools for problems we've learned to ignore</p>
+
+        <div class="app-grid">
+            <div class="app-card">
+                <a href="https://knowmyparts.unbuiltapps.com">
+                    <div class="app-icon">🔧</div>
+                    <h2>KnowMyParts</h2>
+                    <p>Identify components with AI-powered recognition</p>
+                </a>
+            </div>
+
+            <!-- Template for adding more apps -->
+            <!--
+            <div class="app-card">
+                <a href="https://appname.unbuiltapps.com">
+                    <div class="app-icon">📱</div>
+                    <h2>App Name</h2>
+                    <p>Brief description of what this app does</p>
+                </a>
+            </div>
+            -->
+
+            <!-- Coming soon placeholder (remove when you have 5+ apps) -->
+            <div class="app-card coming-soon">
+                <div class="app-icon">⋯</div>
+                <h2>More Coming Soon</h2>
+                <p>Building what should exist</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2026 Unbuilt Apps
+    </footer>
+</body>
+</html>
